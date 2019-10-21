@@ -38,16 +38,16 @@ npm install
 npm start
 ```
 
-    View in a browser: http://localhost:8000
+View in a browser: http://localhost:8000
 
-3. Edit files:
+1. Edit files:
 
     - Site pages: [`src/pages/*`](https://github.com/marcysutton/js-a11y-workshop/blob/master/src/pages)
     - Site components: [`src/components/*`](https://github.com/marcysutton/js-a11y-workshop/blob/master/src/components)
     - Templates: [`src/templates/*`](https://github.com/marcysutton/js-a11y-workshop/blob/master/src/templates)
     - Slide content: [`src/slides/index.mdx`](https://github.com/marcysutton/js-a11y-workshop/blob/master/src/slides/index.mdx)
 
-4. To look at the answers from the exercises, check out the [`/examples`](https://github.com/marcysutton/js-a11y-workshop/blob/master/examples) directory in the `master` branch
+2. To look at the answers from the exercises, check out the [`/examples`](https://github.com/marcysutton/js-a11y-workshop/blob/master/examples) directory in the `master` branch
 
 You can also check out the `solutions` branch to see everything in action: https://github.com/marcysutton/js-a11y-workshop/tree/solutions
 
