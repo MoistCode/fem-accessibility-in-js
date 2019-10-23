@@ -23,7 +23,7 @@ const Dropdown = ({ activatorText = "Dropdown", items = [] }) => {
     const isInActivator = activatorRef.current.contains(e.target);
 
     if (isInDropdownList || isInActivator) {
-        return;
+      return;
     }
 
     setIsOpen(false);
@@ -54,6 +54,7 @@ const Dropdown = ({ activatorText = "Dropdown", items = [] }) => {
         id="dropdown1"
         className={`dropdown-itemList ${isOpen ? "active" : ""}`}
         ref={dropdownListRef}
+        role="list"
       >
         {items.map(item => (
           <li key={item}>
