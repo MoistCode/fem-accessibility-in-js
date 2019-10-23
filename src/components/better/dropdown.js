@@ -18,6 +18,26 @@ const Dropdown = ({ activatorText = "Dropdown", items = [] }) => {
     }
   };
 
+  const clickOutsideHandler = e => {
+    const isInDropdownList = dropdownListRef.current.contains(e.target);
+    const isInActivator = activatorRef.current.contains(e.target);
+
+    if (isInDropdownList || isInActivator) {
+        return;
+    }
+
+    setIsOpen(false);
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      dropdownListRef.current.querySelector("a").focus();
+      document.addEventListener("mousedown", clickOutsideHandler);
+    } else {
+      document.removeEventListener("mousedown", clickOutsideHandler);
+    }
+  }, [isOpen]);
+
   return (
     <div className="dropdown-wrap" onKeyUp={keyHandler}>
       <button
