@@ -4,11 +4,15 @@ import uuid from "uuid";
 import "./dropdown.scss";
 
 const Dropdown = ({ activatorText = "Dropdown", items = [] }) => {
+  const clickHandler = e => {};
+
   return (
     <div className="dropdown-wrap">
-      <button>{activatorText}</button>
+      <button aria-haspopup="true" aria-controls="dropdown1" onClick={clickHandler}>
+        {activatorText}
+      </button>
 
-      <ul>
+      <ul id="dropdown1">
         {items.map(item => (
           <li key={item}>
             <a href={item.url}>{item.text}</a>
