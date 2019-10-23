@@ -8,12 +8,20 @@ const Dropdown = ({ activatorText = "Dropdown", items = [] }) => {
   const dropdownListRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  const clickHandler = e => {};
+  const clickHandler = e => {
+    setIsOpen(!isOpen);
+  };
+
+  const keyHandler = e => {
+    if (e.key === "Escape" && isOpen) {
+      setIsOpen(false);
+    }
+  };
 
   return (
-    <div className="dropdown-wrap">
+    <div className="dropdown-wrap" onKeyUp={keyHandler}>
       <button
-        className=""
+        className="dropdown-activator"
         aria-haspopup="true"
         aria-controls="dropdown1"
         onClick={clickHandler}
@@ -22,7 +30,11 @@ const Dropdown = ({ activatorText = "Dropdown", items = [] }) => {
         {activatorText}
       </button>
 
-      <ul id="dropdown1" ref={dropdownListRef}>
+      <ul
+        id="dropdown1"
+        className={`dropdown-itemList ${isOpen ? "active" : ""}`}
+        ref={dropdownListRef}
+      >
         {items.map(item => (
           <li key={item}>
             <a href={item.url}>{item.text}</a>
